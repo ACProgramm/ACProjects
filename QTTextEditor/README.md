@@ -13,4 +13,5 @@
 
 ---
 
-## 📂 **Структура проекта**
+
+![alt text](Main.png) ![alt text](About.png) ![alt text](Edit.png) ![alt text](File.png)
