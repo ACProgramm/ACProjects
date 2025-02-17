@@ -1,0 +1,517 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>959</width>
+    <height>523</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>500</width>
+    <height>300</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Scriptorio</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="res.qrc">
+    <normaloff>:/images/notes.png</normaloff>:/images/notes.png</iconset>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color:rgb(255, 251, 229)</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <property name="minimumSize">
+    <size>
+     <width>872</width>
+     <height>0</height>
+    </size>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">margin: 0px;
+padding: 0px;
+border: none;</string>
+   </property>
+   <widget class="QWidget" name="CustomTitleBar" native="true">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>806</width>
+      <height>47</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="sizeIncrement">
+     <size>
+      <width>0</width>
+      <height>0</height>
+     </size>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: #C0B9A2;
+</string>
+    </property>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <widget class="QLabel" name="iconLabel">
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer_6">
+       <property name="orientation">
+        <enum>Qt::Orientation::Horizontal</enum>
+       </property>
+       <property name="sizeType">
+        <enum>QSizePolicy::Policy::Fixed</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>13</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QLabel" name="label">
+       <property name="font">
+        <font>
+         <family>Montserrat</family>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>Scriptorio</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer_5">
+       <property name="orientation">
+        <enum>Qt::Orientation::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>484</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QPushButton" name="btnMinimize">
+       <property name="styleSheet">
+        <string notr="true">#btnMinimize {
+    border-radius: 10px;                   
+    border: none;    
+	padding: 5px;                     
+}
+
+/* При наведении */
+#btnMinimize:hover {
+    background-color: rgba(158, 153, 129, 0.7); 
+    box-shadow: 0px 0px 10px rgba(158, 153, 129, 0.5); 
+}
+
+#btnMinimize:pressed {
+    background-color: rgba(138, 133, 109, 0.8);
+    box-shadow: 0px 0px 5px rgba(138, 133, 109, 0.5);
+}</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="icon">
+        <iconset resource="res.qrc">
+         <normaloff>:/images/minus.png</normaloff>:/images/minus.png</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>11</width>
+         <height>11</height>
+        </size>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer_2">
+       <property name="orientation">
+        <enum>Qt::Orientation::Horizontal</enum>
+       </property>
+       <property name="sizeType">
+        <enum>QSizePolicy::Policy::Fixed</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>18</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QPushButton" name="btnMaximize">
+       <property name="styleSheet">
+        <string notr="true">#btnMaximize {
+    border-radius: 10px;                   
+    border: none;    
+	padding: 5px;                     
+}
+
+/* При наведении */
+#btnMaximize:hover {
+    background-color: rgba(158, 153, 129, 0.7); 
+    box-shadow: 0px 0px 10px rgba(158, 153, 129, 0.5); 
+}
+
+#btnMaximize:pressed {
+    background-color: rgba(138, 133, 109, 0.8);
+    box-shadow: 0px 0px 5px rgba(138, 133, 109, 0.5);
+}</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="icon">
+        <iconset resource="res.qrc">
+         <normaloff>:/images/maximize.png</normaloff>:/images/maximize.png</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>11</width>
+         <height>11</height>
+        </size>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer">
+       <property name="orientation">
+        <enum>Qt::Orientation::Horizontal</enum>
+       </property>
+       <property name="sizeType">
+        <enum>QSizePolicy::Policy::Fixed</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>18</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QPushButton" name="btnClose">
+       <property name="styleSheet">
+        <string notr="true">#btnClose {
+    border-radius: 10px;                   
+    border: none;    
+	padding: 5px;                     
+}
+
+/* При наведении */
+#btnClose:hover {
+    background-color: rgba(158, 153, 129, 0.7); 
+    box-shadow: 0px 0px 10px rgba(158, 153, 129, 0.5); 
+}
+
+#btnClose:pressed {
+    background-color: rgba(138, 133, 109, 0.8);
+    box-shadow: 0px 0px 5px rgba(138, 133, 109, 0.5);
+}</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="icon">
+        <iconset resource="res.qrc">
+         <normaloff>:/images/close.png</normaloff>:/images/close.png</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>11</width>
+         <height>11</height>
+        </size>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer_4">
+       <property name="orientation">
+        <enum>Qt::Orientation::Horizontal</enum>
+       </property>
+       <property name="sizeType">
+        <enum>QSizePolicy::Policy::Fixed</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>10</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QWidget" name="widgetMenuBar" native="true">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>46</y>
+      <width>741</width>
+      <height>42</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <layout class="QHBoxLayout" name="horizontalLayout_2">
+     <item>
+      <spacer name="horizontalSpacer_3">
+       <property name="orientation">
+        <enum>Qt::Orientation::Horizontal</enum>
+       </property>
+       <property name="sizeType">
+        <enum>QSizePolicy::Policy::Fixed</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>7</width>
+         <height>15</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QPushButton" name="fileButton">
+       <property name="styleSheet">
+        <string notr="true">#fileButton {
+    border-radius: 10px;                   
+    border: none;   
+	padding: 5px;                     
+}
+
+/* При наведении */
+#fileButton:hover {
+    background-color: rgb(255, 249, 215); 
+    box-shadow: 0px 0px 10px  rgb(255, 249, 215); 
+}
+
+#fileButton:pressed {
+    background-color: rgb(255, 247, 202);
+    box-shadow: 0px 0px 5px rgb(255, 247, 202);
+} </string>
+       </property>
+       <property name="text">
+        <string>File</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer_7">
+       <property name="orientation">
+        <enum>Qt::Orientation::Horizontal</enum>
+       </property>
+       <property name="sizeType">
+        <enum>QSizePolicy::Policy::Fixed</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>13</width>
+         <height>15</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QPushButton" name="editButton">
+       <property name="styleSheet">
+        <string notr="true">#editButton {
+    border-radius: 10px;                   
+    border: none;   
+	padding: 5px;                     
+}
+
+/* При наведении */
+#editButton:hover {
+    background-color: rgb(255, 249, 215); 
+    box-shadow: 0px 0px 10px  rgb(255, 249, 215); 
+}
+
+#editButton:pressed {
+    background-color: rgb(255, 247, 202);
+    box-shadow: 0px 0px 5px rgb(255, 247, 202);
+} </string>
+       </property>
+       <property name="text">
+        <string>Edit</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer_8">
+       <property name="orientation">
+        <enum>Qt::Orientation::Horizontal</enum>
+       </property>
+       <property name="sizeType">
+        <enum>QSizePolicy::Policy::Fixed</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>13</width>
+         <height>15</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QPushButton" name="aboutButton">
+       <property name="styleSheet">
+        <string notr="true">#aboutButton {
+    border-radius: 10px;                   
+    border: none;   
+	padding: 5px;                     
+}
+
+/* При наведении */
+#aboutButton:hover {
+    background-color: rgb(255, 249, 215); 
+    box-shadow: 0px 0px 10px  rgb(255, 249, 215); 
+}
+
+#aboutButton:pressed {
+    background-color: rgb(255, 247, 202);
+    box-shadow: 0px 0px 5px rgb(255, 247, 202);
+} </string>
+       </property>
+       <property name="text">
+        <string>About</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer_9">
+       <property name="orientation">
+        <enum>Qt::Orientation::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>528</width>
+         <height>15</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QTabWidget" name="tabWidget">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>87</y>
+      <width>771</width>
+      <height>411</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Montserrat</family>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QTabBar::tab {
+    background-color: #D8D0B8;
+    font-family: &quot;Montserrat&quot;;
+    font-weight: 500; /* Regular */
+    color: white;
+    padding: 5px;
+}
+
+/* Стиль для активной (выбранной) вкладки */
+QTabBar::tab:selected {
+    background-color: #C0B9A2;
+    font-weight: 800; 
+    color: white;
+}
+</string>
+    </property>
+    <property name="currentIndex">
+     <number>0</number>
+    </property>
+    <widget class="QWidget" name="tab">
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
+     <attribute name="title">
+      <string>New Tab</string>
+     </attribute>
+     <layout class="QHBoxLayout" name="horizontalLayout_3">
+      <property name="spacing">
+       <number>0</number>
+      </property>
+      <property name="leftMargin">
+       <number>0</number>
+      </property>
+      <property name="topMargin">
+       <number>0</number>
+      </property>
+      <property name="rightMargin">
+       <number>0</number>
+      </property>
+      <property name="bottomMargin">
+       <number>0</number>
+      </property>
+      <item>
+       <widget class="QTextEdit" name="textEdit">
+        <property name="styleSheet">
+         <string notr="true">QTextEdit {
+    padding-left: 9px; /* Отступ слева */
+ padding-top:9px;
+background-color:rgb(255, 254, 247)
+}
+
+
+</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QStatusBar" name="statusbar">
+   <property name="styleSheet">
+    <string notr="true">QStatusBar{
+	background-color:rgb(255, 251, 229);
+}
+</string>
+   </property>
+  </widget>
+ </widget>
+ <resources>
+  <include location="res.qrc"/>
+ </resources>
+ <connections/>
+</ui>
