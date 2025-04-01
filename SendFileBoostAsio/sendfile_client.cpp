@@ -4,16 +4,16 @@
 #include <fstream>
 
 using boost::asio::ip::tcp;
-
+//
 void connectToServer(boost::asio::io_context& io_context, tcp::socket& socket) {
     try {
         tcp::resolver resolver(io_context);
         auto endpoints = resolver.resolve("127.0.0.1", "8080");
         boost::asio::connect(socket, endpoints);
-        std::cout << "Ïîäêëþ÷åíèå ê ñåðâåðó óñïåøíî!\n";
+        std::cout << "ÃÃ®Ã¤ÃªÃ«Ã¾Ã·Ã¥Ã­Ã¨Ã¥ Ãª Ã±Ã¥Ã°Ã¢Ã¥Ã°Ã³ Ã³Ã±Ã¯Ã¥Ã¸Ã­Ã®!\n";
     }
     catch (std::exception& e) {
-        std::cerr << "Îøèáêà ïîäêëþ÷åíèÿ: " << e.what() << std::endl;
+        std::cerr << "ÃŽÃ¸Ã¨Ã¡ÃªÃ  Ã¯Ã®Ã¤ÃªÃ«Ã¾Ã·Ã¥Ã­Ã¨Ã¿: " << e.what() << std::endl;
     }
 }
 
@@ -22,7 +22,7 @@ void receiveFile(tcp::socket& socket, const std::string& filename) {
         std::string save_path = "D://Games//" + filename;
         std::ofstream output(save_path, std::ios::binary);
         if (!output) {
-            std::cerr << "Îøèáêà ñîçäàíèÿ ôàéëà!\n";
+            std::cerr << "ÃŽÃ¸Ã¨Ã¡ÃªÃ  Ã±Ã®Ã§Ã¤Ã Ã­Ã¨Ã¿ Ã´Ã Ã©Ã«Ã !\n";
             return;
         }
 
@@ -31,20 +31,20 @@ void receiveFile(tcp::socket& socket, const std::string& filename) {
 
         while (true) {
             size_t bytes_transferred = socket.read_some(boost::asio::buffer(buffer), error);
-            if (error == boost::asio::error::eof) break;  // Ñåðâåð çàêðûë ñîåäèíåíèå (ôàéë ïåðåäàí)
+            if (error == boost::asio::error::eof) break;  // Ã‘Ã¥Ã°Ã¢Ã¥Ã° Ã§Ã ÃªÃ°Ã»Ã« Ã±Ã®Ã¥Ã¤Ã¨Ã­Ã¥Ã­Ã¨Ã¥ (Ã´Ã Ã©Ã« Ã¯Ã¥Ã°Ã¥Ã¤Ã Ã­)
             if (error) {
-                std::cerr << "Îøèáêà ïðè ïîëó÷åíèè ôàéëà: " << error.message() << '\n';
+                std::cerr << "ÃŽÃ¸Ã¨Ã¡ÃªÃ  Ã¯Ã°Ã¨ Ã¯Ã®Ã«Ã³Ã·Ã¥Ã­Ã¨Ã¨ Ã´Ã Ã©Ã«Ã : " << error.message() << '\n';
                 return;
             }
 
             output.write(buffer.data(), bytes_transferred);
-            std::cout << "Ïîëó÷åíî " << bytes_transferred << " áàéò\n";
+            std::cout << "ÃÃ®Ã«Ã³Ã·Ã¥Ã­Ã® " << bytes_transferred << " Ã¡Ã Ã©Ã²\n";
         }
 
-        std::cout << "Ôàéë óñïåøíî çàãðóæåí!\n";
+        std::cout << "Ã”Ã Ã©Ã« Ã³Ã±Ã¯Ã¥Ã¸Ã­Ã® Ã§Ã Ã£Ã°Ã³Ã¦Ã¥Ã­!\n";
     }
     catch (std::exception& e) {
-        std::cerr << "Îøèáêà: " << e.what() << '\n';
+        std::cerr << "ÃŽÃ¸Ã¨Ã¡ÃªÃ : " << e.what() << '\n';
     }
 }
 
